@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nightstand</title>
+
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+
+</head>
+<body>
+
+    <a-scene>
+        <a-camera position="0 3 5"></a-camera>
+        <a-assets>
+            <a-asset-item id="nightstand" src="models/nightstand.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity light="type: ambient; color: #EEE; intensity:0.7;" position="5 10 8"></a-entity>
+
+        <a-entity animation="propety:rotation; to:0 360 0; easing:linear; loop:true; dur:3000;">
+            <a-entity light="type: directional; castShadow:true; color: #EEE; intensity:1;" position="5 10 8"></a-entity>
+        </a-entity>
+
+        <a-circle radius="100" position="0 0 0" rotation="-90 0 0" shadow="recieve:true"></a-circle>
+
+        <a-entity>
+            <a-entity position="0 0 0" rotation="0 0 0" scale="0.05 0.05 0.05" gltf-model="#nightstand" color="white" shadow="cast:true"></a-entity>
+        </a-entity>
+    </a-scene>
+    
+</body>
+</html>
